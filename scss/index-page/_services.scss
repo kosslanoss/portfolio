@@ -1,0 +1,72 @@
+.services {
+  padding: 45px 0 30px;
+  background-color: $silver-100;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__item {
+    max-width: 265px;
+    position: relative;
+    padding-left: 75px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: 0;
+    }
+
+    &--delivery::before {
+      background-image: url(../images/icons/scooter.svg);
+    }
+
+    &--return::before {
+      background-image: url(../images/icons/return.svg);
+    }
+
+    &--support::before {
+      background-image: url(../images/icons/support.svg);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 992px) {
+  .services {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin: 0 15px 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 30px 0;
+    
+    &__wrapper {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__item {
+      margin: 0 0 30px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

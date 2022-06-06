@@ -1,0 +1,19 @@
+.brands {
+  padding-top: 70px;
+  
+  &__img {
+    opacity: 50%;
+    transition: opacity 0.3s;
+    margin: 0 auto;
+    
+    &:hover {
+      opacity: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .brands {
+    padding-top: 48px;
+  }
+}

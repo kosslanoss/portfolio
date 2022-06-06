@@ -1,0 +1,269 @@
+.footer {
+  padding: 30px 0 25px;
+  background-color: $dark-800;
+  color: $white;
+}
+
+.footer-top {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+  }
+
+  &__form {
+    width: 315px;
+  }
+
+  &__input {
+    max-width: 180px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 6px 0px 0px 6px;
+    padding: 12px;
+  }
+
+  &__btn {
+    max-width: 125px;
+    width: 100%;
+    height: 40px;
+    border-radius: 0px 6px 6px 0px;
+    border: none;
+    background-color: $green-900;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    transform: translateX(-3px);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: $green-800;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.5);
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__menu-list {
+    column-count: 3;
+    column-gap: 75px;
+  }
+
+  &__menu-item {
+    padding: 9px 0;
+  }
+
+  &__menu-link {
+    border: solid 3px transparent;
+    transition:  opacity 0.3s, border 0.3s;
+
+    &:hover {
+      opacity: 70%;
+    }
+
+    &:focus {
+      border: solid 3px $white;
+      border-radius: 3px;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 15px;
+    display: block;
+    border: solid 3px transparent;
+    transition:  opacity 0.3s, border 0.3s;
+
+    &:hover {
+      opacity: 70%;
+    }
+
+    &:focus {
+      border: solid 3px $white;
+      border-radius: 3px;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
+
+  &__address {
+    margin-bottom: 15px;
+  }
+
+  &__social-list {
+    display: flex;
+  }
+
+  &__social-item:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &__social-link {
+    display: block;
+    width: 38px;
+    height: 39px;
+    border: solid 3px transparent;
+    border-radius: 3px;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 70%;
+    }
+
+    &:focus {
+      border-radius: 3px;
+      box-shadow: 0px 0px 0px 3px $green-200;
+    }
+
+    &:active {
+      path {
+        fill: $green-200;
+      }
+    }
+  }
+
+}
+
+.footer-bottom {
+  padding-top: 27px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    align-self: center;
+  }
+
+  &__payment {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__payment-visa {
+    background-image: url(../images/icons/visa.svg);
+    width: 93px;
+    height: 29px;
+    margin-right: 25px;
+  }
+
+  &__payment-mastercard {
+    background-image: url(../images/icons/mastercard.svg);
+    width: 49px;
+    height: 29px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-top {
+    &__menu-list {
+      column-gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    .logo {
+      &__img {
+        margin: 0 auto;
+      }
+    }
+
+    &__wrapper {
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    &__submit {
+      order: 2;
+      margin: 0 auto;
+      padding-top: 25px;
+    }
+
+    &__menu {
+      padding: 24px 0;
+      margin: 0 auto;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, .1);
+      }
+      
+      &::before {
+        transform: translateY(-24px);
+      }
+      
+      &::after {
+        transform: translateY(20px);
+      }
+    }
+
+    &__contacts {
+      order: -1;
+      text-align: center;
+    }
+
+    &__social-list {
+      justify-content: center;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    &__menu-list {
+      column-count: 2;
+      padding-left: 35px;
+    }
+  }
+
+  .footer-bottom {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__payment {
+      order: -1;
+
+      span {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .footer-top {
+    &__menu-list {
+      column-count: 1;
+    }
+  }
+}

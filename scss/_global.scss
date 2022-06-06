@@ -1,0 +1,263 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+  color: $dark-900;
+  font-family: $open-sans;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.title {
+  font-family: 'Ruda';
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 30px;
+}
+
+.button-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 181px;
+  height: 47px;
+  border: solid 3px transparent;
+  border-radius: 6px;
+  background-color: $green-900;
+  color: $white;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: $green-800;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 181px;
+  height: 47px;
+  border: solid 1px $green-900;
+  border-radius: 6px;
+  background-color: $white;
+  color: $green-900;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: $green-100;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.5);
+  }
+
+  &:active {
+    color: rgba(99, 166, 14, 0.5);
+    box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: solid 3px transparent;
+  border-radius: 3px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: $green-100;
+
+    path {
+      transition: fill 0.3s;
+      fill: $green-900;
+    }
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.0001);
+    box-shadow: 0px 0px 0px 3px $green-200;
+  }
+
+  &:active {
+    background-color: rgba(193, 193, 193, 0.3);
+  }
+}
+
+.product__nav,
+.promo__nav {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.product__nav-btn,
+.promo__nav-btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $green-900;
+  }
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.0001);
+    box-shadow: 0px 0px 0px 3px #E0EDCF;
+    border-radius: 3px;
+  }
+}
+
+.mixitup-control-active {
+  border-bottom: solid 3px rgba(99, 166, 14, 0.2);
+}
+
+.product__nav-btn,
+.promo__nav-btn:not(:last-child) {
+  margin-right: 24px;
+}
+
+.badges {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 12px;
+  left: 12px;
+}
+
+.badge {
+  width: 100%;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  padding: 3px 6px;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+
+  &--price {
+    max-width: 37px;
+    background-color: $red-900;
+  }
+
+  &--new {
+    max-width: 66px;
+    background-color: $green-900;
+  }
+
+  &--hit {
+    max-width: 28px;
+    background-color: $orange-900;
+  }
+}
+
+.badge:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.price {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &-old {
+    color: $silver-600;
+    text-decoration: line-through;
+  }
+
+  &-new {
+    color: $dark-500;
+  }
+}
+
+.reality {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  line-height: 100%;
+
+  &--in-stock {
+    color: $green-900;
+  }
+
+  &--ends {
+    color: $red-900;
+  }
+
+  &--not-available {
+    color: $silver-600;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
